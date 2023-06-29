@@ -1,0 +1,18 @@
+.btn-container{
+    position: relative;
+    margin-top: 30px;
+}
+.next-btn{
+    position: absolute;
+    right: 0;
+}
+.pre-btn{
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 400px) {
+    .next-btn,.pre-btn{
+        padding:0.5em 1em;
+    }
+  }

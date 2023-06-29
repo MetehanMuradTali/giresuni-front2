@@ -1,0 +1,116 @@
+.post-container {
+    margin-top:50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+}
+.post-bg {
+    background-color: var(--primary);
+    opacity: 5%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    flex: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.post {
+    width: 45%;
+    min-width: 550px;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    padding: 1.5em 3em;
+}
+.header{
+    padding-left: 20px;
+    font-size: 21px;
+}
+.poem{
+    white-space: pre-line;
+    word-wrap: break-word;
+    font-size: 18px;
+}
+.link{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+/* Admin */
+.admin-container{
+    width: 85%;
+    min-width: 1200px;
+    height: 100%;
+    min-height: 600px;
+    position: relative;
+    padding: 1.5em 3em;
+    margin: 0 auto;
+}
+
+.admin-poem-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}
+.admin-poem{
+    text-align: center;
+    background-color: var(--secondarybtn);
+    width: 250px;
+    height: 80px;
+    padding-left: 20px;
+    padding-top: 25px;
+    border-radius: 10px;
+}
+
+.admin-header{
+    text-align: center;
+}
+.admin-logo{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .post {
+        min-width: 400px;
+    }
+    
+    .header{
+        padding-left: 15px;
+        font-size: 17px;
+    }
+    .poem{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .post {
+        min-width: 300px;
+    }
+    .link{
+        position: initial;
+        margin-bottom: 5px;
+        margin-top: 13px;
+    }
+}
+@media (max-width: 300px) {
+    .post {
+        min-width: 250px;
+    }
+}

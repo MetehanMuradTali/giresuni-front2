@@ -1,0 +1,69 @@
+.container{
+    width: 80%;
+    min-width: 1200px;
+    height: 100%;
+    min-height: 600px;
+    position: relative;
+    padding: 1.5em 3em;
+    margin: 0 auto;
+}
+.header{
+    text-align: center;
+}
+.logo{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 18px;
+}
+.poem-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+
+}
+.poem{
+    text-align: center;
+    background-color: var(--secondarybtn);
+    width: 250px;
+    height: 80px;
+    padding-left: 20px;
+    padding-top: 25px;
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .container{
+        min-width: 600px;
+    }
+    .poem-container{
+        grid-template-columns: 1fr 1fr;
+    
+    }
+}
+
+@media (max-width: 600px) {
+    .container{
+        min-width: 540px;
+    }
+    .poem-container{
+        grid-template-columns: 1fr;
+    
+    }
+}
+
+@media (max-width: 540px) {
+    .container{
+        min-width: 250px;
+        width: 100%;
+    }
+    
+}
+@media (max-width:410px){
+    .poem{
+        width: 100%;
+        padding-top: 1em;
+        padding-left: 2em;
+    }
+}

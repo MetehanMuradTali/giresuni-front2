@@ -1,7 +1,9 @@
 import { verifyJwtToken } from "../../libs/auth";
 
+
 const fromServer = async () =>{
-    const cookies = require("next/headers").cookies;
+    const cookies = (await import('next/headers')).cookies
+    //const cookies = require("next/headers").cookies;
     const cookieList = cookies();
 
     const {value:token} = cookieList.get("token") ?? {value:null};

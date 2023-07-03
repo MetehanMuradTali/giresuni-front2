@@ -1,26 +1,26 @@
 "use client"
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "./page.module.css"
 
+
 export default function Login(){
     const router = useRouter()
-    const searchParams = useSearchParams()
     const [formData,setFormData] = useState({
         isim:"",
         sifre:""
     })
-    const Login =async ()=>{
-        console.log(formData)
+    async function Login(){
         const res=await fetch('/api/login', {
                     headers: {'Content-Type': "application/json"},
                     method:"POST",
                     body: JSON.stringify(formData),
+                    cache: "no-cache",
+                    
                 }
         )
         const {success} = await res.json()
         if(success){
-            const nextUrl= searchParams.get("next")
             router.push("/")
             router.refresh()
         }

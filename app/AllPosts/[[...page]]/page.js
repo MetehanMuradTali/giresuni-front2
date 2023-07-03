@@ -1,6 +1,9 @@
 import Posts from '../../../components/posts'
 import Pagination from "../../../components/posts_pagination"
 
+export const revalidate = 0
+
+
 export const metadata = {
   title: "Bütün Şiirler"
 }

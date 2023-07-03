@@ -1,7 +1,9 @@
 "use client"
+
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import styles from "./page.module.css"
+
 
 export default function Register(){
     const router = useRouter()
@@ -10,12 +12,12 @@ export default function Register(){
         isim:"",
         sifre:""
     })
-    const Register =async ()=>{
-        console.log(formData)
+    async function Register(){
         const res=await fetch('/api/register', {
                     headers: {'Content-Type': "application/json"},
                     method:"POST",
                     body: JSON.stringify(formData),
+
                 }
         )
         const {success} = await res.json()

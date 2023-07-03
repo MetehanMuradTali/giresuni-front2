@@ -1,6 +1,7 @@
-  import Main from "../../components/main"
-  import Pagination from "../../components/pagination"
+import Main from "../../components/main"
+import Pagination from "../../components/pagination"
 
+export const revalidate = 0
 
 
 export default async function Home({params}) {

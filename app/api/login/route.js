@@ -7,6 +7,7 @@ export async function POST(request){
                 headers: {'Content-Type': "application/json"},
                 method:"POST",
                 body: JSON.stringify(FormData),
+                cache: "no-cache"
             }
         )
     const user=await res.json()

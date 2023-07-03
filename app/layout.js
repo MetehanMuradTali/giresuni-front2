@@ -2,8 +2,10 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import '../styles/reset.css'
 import '../styles/global.css'
-import { Inter } from 'next/font/google';
 
+export const revalidate = 0
+
+import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {

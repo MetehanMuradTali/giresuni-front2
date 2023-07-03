@@ -4,7 +4,7 @@ import { Comment } from './Comment.js'
 import {RiDeleteBin2Fill}  from "react-icons/ri"
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-useRouter
+
 export function Admin ({post,Auth}){
   const router= useRouter();
 
@@ -71,4 +71,21 @@ export function Admin ({post,Auth}){
       </>
       )
 
+}
+
+export const getAllOfPosts= async ()=>{
+  const res = await fetch("https://siir-sitesi-backend.onrender.com/User/AllOfPosts",{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  const repo = await res.json()
+  return repo.postlar
+}
+export async function generateStaticParams(){
+  console.log("build içinde")
+  const posts = await getAllOfPosts();
+  
+  return posts.map(post => ({id: `${post.id}`}))
 }

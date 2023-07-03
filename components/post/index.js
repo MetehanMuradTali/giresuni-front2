@@ -28,3 +28,4 @@ const Post = async ({id}) => {
 }
 
 export default Post
+

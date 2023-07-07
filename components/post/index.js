@@ -1,12 +1,18 @@
 import React from 'react'
-import { useAuth } from '../../hooks/auth'
 import {User} from "./user"
 import {Admin} from "./admin"
-
+import { cookies } from 'next/headers'
+import { verifyJwtToken } from '../../libs/auth'
 
 const Post = async ({id}) => {
+  async function fromServer(){
+    const cookieList = cookies();
 
-  const Auth=await useAuth.fromServer() 
+    const {value:token} = cookieList.get("token") ?? {value:null};
+    const verifiedToken = await verifyJwtToken(token);
+    return verifiedToken;
+}
+const Auth=await fromServer()
   const getPost = async (id) => {
       const res = await fetch("https://siir-sitesi-backend.onrender.com/Admin/Post",{
                     method: 'POST',

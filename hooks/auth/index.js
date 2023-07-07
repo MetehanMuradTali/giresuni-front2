@@ -1,4 +1,4 @@
-import { verifyJwtToken } from "../../libs/auth";
+/*import { verifyJwtToken } from "../../libs/auth";
 
 
 const fromServer = async () =>{
@@ -13,4 +13,4 @@ const fromServer = async () =>{
 
 export function useAuth(){}
 
-useAuth.fromServer=fromServer;
+useAuth.fromServer=fromServer;*/

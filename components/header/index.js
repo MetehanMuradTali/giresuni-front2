@@ -3,10 +3,17 @@ import Link from 'next/link'
 import styles from './page.module.css'
 import {FaFacebookSquare,FaInstagramSquare,FaYoutubeSquare} from 'react-icons/fa'
 import {GiCherry} from "react-icons/gi"
-import { useAuth } from '../../hooks/auth'
+import { cookies } from 'next/headers'
+import { verifyJwtToken } from '../../libs/auth'
+async function index(){
+    async function fromServer(){
+        const cookieList = cookies();
 
-const index =async () => {
-    const Auth=await useAuth.fromServer()
+        const {value:token} = cookieList.get("token") ?? {value:null};
+        const verifiedToken = await verifyJwtToken(token);
+        return verifiedToken;
+    }
+    const Auth=await fromServer()
   return (
     <nav className={styles["header-container"]}>
         <div className={styles["left-flex"]}>

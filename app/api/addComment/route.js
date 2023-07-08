@@ -1,7 +1,13 @@
-import { useAuth } from "../../../hooks/auth"
 import { NextResponse } from "next/server"
 export async function POST(request){
-    const Auth=await useAuth.fromServer()
+    async function fromServer(){
+        const cookieList = cookies();
+    
+        const {value:token} = cookieList.get("token") ?? {value:null};
+        const verifiedToken = await verifyJwtToken(token);
+        return verifiedToken;
+    }
+    const Auth=await fromServer()    
     if(Auth){
         const FormData=await request.json()
         const FormData2={...FormData,kullaniciIsim:Auth.isim}

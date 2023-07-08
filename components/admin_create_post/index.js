@@ -16,7 +16,7 @@ function index(){
         const res=await fetch('/api/createPostAdmin', {
                     headers: {'Content-Type': "application/json"},
                     method:"POST",
-                    body: JSON.stringify({FormData}),
+                    body: JSON.stringify(FormData),
                 },
                 
         )

@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server"
-import { useAuth } from "../../../hooks/auth"
 
 export async function POST(request){
-    const Auth=await useAuth.fromServer()
-    if(Auth){
+async function fromServer(){
+    const cookieList = cookies();
+
+    const {value:token} = cookieList.get("token") ?? {value:null};
+    const verifiedToken = await verifyJwtToken(token);
+    return verifiedToken;
+}
+const Auth=await fromServer()    if(Auth){
         if(Auth.role=="admin"){
             const FormData=await request.json()
             const res=await fetch('https://siir-sitesi-backend.onrender.com/Admin/AllPost', {

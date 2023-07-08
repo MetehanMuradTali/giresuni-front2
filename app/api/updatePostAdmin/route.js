@@ -9,7 +9,8 @@ async function fromServer(){
     const verifiedToken = await verifyJwtToken(token);
     return verifiedToken;
 }
-const Auth=await fromServer()    if(Auth){
+const Auth=await fromServer()
+    if(Auth){
         if(Auth.role=="admin"){
             const FormData=await request.json()
             const res=await fetch('https://siir-sitesi-backend.onrender.com/Admin/Update_Post', {

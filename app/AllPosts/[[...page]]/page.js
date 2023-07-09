@@ -21,16 +21,26 @@ const getAllPosts = async (pageNumber) => {
 }
 
 export default async function Page({params}) {
-  let posts
-  let pageNumber
-  if(params.page){
-    pageNumber=params.page[0]
-    posts = await getAllPosts(pageNumber)
+  async function setPageNumber(){
+    if(params.page==undefined){
+      return 1
+    }
+    else{
+      return params.page[0]
+    }
   }
-  else{
-    pageNumber=1
-    posts=await getAllPosts(pageNumber)
+
+  async function getPosts(){
+    if(params.page==undefined){
+      return await getAllPosts(1)
+    }
+    else{
+      return  await getAllPosts(params.page[0])
+    }
   }
+  
+  let pageNumber = await setPageNumber()
+  let posts = await getPosts()
 return (
   <div>
     <Posts posts={posts}/>

@@ -6,7 +6,7 @@ export const revalidate = 0
 
 export default async function Home({params}) {
   async function setPageNumber(){
-    if(params.page==undefined){
+    if(params.page==undefined || params.page[0]=="index"){
       return 1
     }
     else{

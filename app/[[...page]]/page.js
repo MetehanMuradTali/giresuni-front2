@@ -14,7 +14,8 @@ export default async function Home({params}) {
     }
   }
   let pageNumber = await setPageNumber()
-  
+    console.log(pageNumber)
+
   return (
     <div>
       <Main pageNumber={pageNumber}/>

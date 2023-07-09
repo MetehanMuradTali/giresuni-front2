@@ -5,14 +5,15 @@ export const revalidate = 0
 
 
 export default async function Home({params}) {
-  let pageNumber
-  if(params.page){
-    pageNumber=params.page[0]
+  async function setPageNumber(){
+    if(params.page==undefined){
+      return 1
+    }
+    else{
+      return params.page[0]
+    }
   }
-  else{
-    pageNumber=1
-  }
-  
+  let pageNumber = await setPageNumber()
   
   return (
     <div>

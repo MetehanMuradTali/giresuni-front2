@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './page.module.css'
 const index = ({pageNumber}) => {
+      console.log(pageNumber)
     let prePage= parseInt(pageNumber)-1
     let nextPage = parseInt(pageNumber)+1
   return (

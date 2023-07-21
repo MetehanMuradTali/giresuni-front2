@@ -86,9 +86,9 @@ return (<>
     <div className={`${styles["not-Auth"]}`}>
         <div className={`${styles["not-Auth-header"]}`}>Yorum Yapabilmek İçin</div>
         <div className={`${styles["not-Auth-buttons"]}`}>
-            <Link href="/Login" className="secondary-button" >Giriş Yapın</Link> 
+            <Link href="/Login" className={`secondary-button ${styles["btn"]}`} >Giriş Yapın</Link> 
             <span style={{"margin":"0 10px"}} >veya</span>
-            <Link href="/Register" className="secondary-button" >Kayıt Olun</Link>
+            <Link href="/Register"className={`secondary-button ${styles["btn"]}`} >Kayıt Olun</Link>
         </div>
      </div>  
      }

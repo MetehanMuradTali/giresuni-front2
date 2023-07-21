@@ -10,7 +10,7 @@
 }
 .post-bg {
     background-color: var(--primary);
-    opacity: 5%;
+    opacity: 13%;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -32,13 +32,15 @@
     padding: 1.5em 3em;
 }
 .header{
-    padding-left: 20px;
     font-size: 21px;
+    text-align: center;
 }
 .poem{
     white-space: pre-line;
     word-wrap: break-word;
     font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
 }
 .link{
     position: absolute;

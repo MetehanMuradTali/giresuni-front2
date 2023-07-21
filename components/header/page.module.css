@@ -22,9 +22,10 @@
     padding: 0 5px;
 }
 .all-posts:hover{
-    background-color: var(--third);
+    background-color: var(--secondarybtn);
     transform: scale(1.1);
     transition: 0.3s;
+    border-radius: 3px;
 }
 .links{
     display: flex;

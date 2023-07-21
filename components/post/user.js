@@ -1,24 +1,7 @@
-import React from 'react'
+  import React from 'react'
 import styles from './page.module.css'
 import { Comment } from './Comment.js'
 
-/*export async function generateMetadata({id}) {
-  // read route params
-  const id =id
- 
-  // fetch data
-  const res = await fetch("https://siir-sitesi-backend.onrender.com/User/Post",{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body:JSON.stringify({id:id}),
-  })
-const repo = await res.json()  
-  return {
-    title: repo.post.baslik,
-  }
-}*/
 
 export async function User({id,Auth}){
   const getPost = async (id) => {

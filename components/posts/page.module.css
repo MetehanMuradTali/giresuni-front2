@@ -25,11 +25,10 @@
 }
 .poem{
     text-align: center;
-    background-color: var(--secondarybtn);
+    background-color: var(--primarybtn);
     width: 250px;
     height: 80px;
-    padding-left: 20px;
-    padding-top: 25px;
+    padding-top: 20px;
     border-radius: 10px;
 }
 
